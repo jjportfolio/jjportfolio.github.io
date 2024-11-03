@@ -1,11 +1,146 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Jaroslav Ju-Folio</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <H1>Hello JJ_P</H1>
+    <div class="wrapper">
+        <div class="top_line">
+            <h2>Website-Frontend-Entwickler</h2>
+            <h2>2023</h2>
+            <div class="header__burger">
+                <span></span>
+            </div>
+        </div>
+        <header>
+            <section class="_container">
+                <div class="header__top">
+                    <div class="header__logo">                
+                        <span>Juschtschenko</span>
+                        <span>Jaroslav</span>
+                    </div>
+                    <nav class="header__menu">
+                        <ul class="header__list">
+                            <li><a href="#" class="header__link">Über mich</a></li>
+                            <li><a href="#git" class="header__link scroll-to">Main Git</a></li>
+                            <li><a href="#technologies" class="header__link scroll-to">Technologie</a></li>
+                            <li><a href="#p" class="header__link scroll-to">Portfolio</a></li>
+                            <li><a href="#test" class="header__link scroll-to">Kontakte</a></li>
+                        </ul>
+                    </nav>
+                </div>     
+                <div class="header__body">
+                    <div class="header_main">
+                        <div>
+                            <h1>Hallo Welt</h1>
+                            <p>Mein Name ist Jaroslav Juschtschenko</p>
+                            <p>Ich mache HTML-Layout von Websites</p>                            
+                            <div class="button">
+                                <a href="downloads/Lebenslauf_Juschtschenko.pdf" target="_blank"><button class="button_item">Lebenslauf herunterladen (PDF)</button></a>
+                                <a href="#p" class="scroll-to"><button class="button_item">Portfolio ansehen</button></a>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="img/header_logo1.png" alt="Logo">
+                        </div>
+                    </div>
+                    <div class="header_footer">
+                        <div class="phone">
+                            <span>Telefon: <a href="tel:+4915236502268">+4915236502268</a></span> <br>
+                            <span>Email: <a href="mailto:Jjuschtschenko@gmail.com">Jjuschtschenko@gmail.com</a></span> <br>
+                            <span id="git">Mein Git Hub:<a href="https://github.com/yargrinders" target="_blank">&nbsp;@Yargrinders</a></span>
+                        </div>
+                    </div>                                    
+                </div> 
+            </section>
+        </header>
+        <main>
+            <section class="_container">
+                <h2 id="technologies" >Welche Technologien verwende ich bei meiner Arbeit?</h2>
+                <div class="slider">
+                    <div class="slider__item">
+                        <img src="img/slider/html-logo.png" class="slider__img " alt="Html Css">
+                    </div>
+                    <div class="slider__item">
+                        <img src="img/slider/JavaScript.png" class="slider__img" alt="JavaScript">
+                    </div>
+                    <div class="slider__item">
+                        <img src="img/slider/jquery-logo.png" class="slider__img" alt="jQuery">
+                    </div>
+                    <div class="slider__item">
+                        <img src="img/slider/bootstrap-logo.png" class="slider__img" alt="Bootstrap">
+                    </div>
+                    <div class="slider__item">
+                        <img src="img/slider/figma.png" class="slider__img" alt="Figma">
+                    </div>
+                    <div class="slider__item">
+                        <img src="img/slider/photoshop-logo.png" class="slider__img" alt="Photoshop">
+                    </div>
+                    <div class="slider__item">
+                        <img src="img/slider/avocode-logo.png" class="slider__img" alt="Avocode">
+                    </div>     
+                    <div class="slider__item">
+                        <img src="img/slider/pixel-logo.png" class="slider__img" alt="Pixel Perfec">
+                    </div>        
+                    <div class="slider__item">
+                        <img src="img/slider/gulp-logo.png" class="slider__img" alt="Gulp">
+                    </div>   
+                </div>
+            </section>
+            <section class="_container">
+                <h2 id="p">Portfolio</h2>
+                <div class="portfolio"></div>
+                <button id="openMoreButton">Mehr anzeigen</button>
+                <button id="closeCards" style="display: none;">Verbergen</button>
+            </section>            
+        </main>
+        <footer>
+            <section class="_container">
+                <h2 id="test">Kontakte</h2>
+                <div class="footer_card"> 
+                    <div class="footer_card__item">
+                        <div class="footer_card__text">
+                            <div>
+                                <span>Vorname / Nachname</span>
+                                <p>Jaroslav Juschtschenko</p>
+                                <span>Email</span>
+                                <p><a class="footer_link-item" href="mailto:Jjuschtschenko@gmail.com">Jjuschtschenko@gmail.com</a></p>
+                            </div>
+                            <div>
+                                <span>Telefon</span>
+                                <p><a class="footer_link-item" href="tel:+4915236502268">+4915236502268</a></p>
+                                <span>Telegram</span>
+                                <p><a class="footer_link-item" href="https://t.me/Yargrinders">@Yargrinders</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer_astronaut">
+                        <img src="img/footer_bg.png" alt="">
+                    </div>
+                </div>
+            </section>
+        </footer>
+        <div class="bottom_line">
+            <h2>Website-Frontend-Entwickler</h2>
+            <h2>2023</h2>
+        </div>
+        <p id="back-top">
+            <a href="#top"><span></span></a>
+        </p>
+    </div>
+    
+    <!-- Jquery 3.4.1 -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- Slick -->
+    <script src="js/slick.min.js"></script>
+    <!-- IBG / Menu Burger / Scroll-to -->
+    <script src="js/scrypt.js"></script>
+    <!-- Cards -->
+    <script src="js/cards.js"></script>
 </body>
 </html>
