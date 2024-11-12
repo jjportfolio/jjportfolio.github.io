@@ -1,0 +1,8 @@
+{
+    "title": "Welcome to My Website",
+    "description": "This is an example of using JSON data in HTML templates.",
+    "user": {
+        "name": "John Doe",
+        "email": "john.doe@example.com"
+    }
+}
