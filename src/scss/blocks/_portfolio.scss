@@ -9,7 +9,7 @@
 }
 .portfolio__card {
     width: 270px;
-    height: 450px;
+    height: 460px;
     text-align: center;
     margin: 0 auto;
     background: white;
@@ -60,6 +60,38 @@
 .card_image-bottom {
     height: 100%;
     margin: 10px 0px;
+}
+.card_image-bottom > p {
+    min-height: 20px;
+    margin: 0 0;
+}
+.card_image-bottom > p:nth-child(2)::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url("../img/icons/link-alt-regular-24.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+.card_image-bottom > p:nth-child(3)::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url("../img/icons/github-logo-24.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+.card_image-bottom > p > a {
+    color: rgb(0, 0, 0);
+}
+.card_image-bottom > p > a:hover {
+    color: var(--c-red);
 }
 /* #openMoreButton, 
 #closeCards {

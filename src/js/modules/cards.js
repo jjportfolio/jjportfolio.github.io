@@ -1,28 +1,9 @@
 // Module PortfolioCards
 function PortfolioCards() {
-    const cardData = [
-        {
-            imageSrc: "img/cards_img/oA73KOL.png",
-            link: "#",
-            technologies: "Gulp Html Scss JS"
-        },
-        {
-            imageSrc: "img/cards_img/Novaboard.png",
-            link: "https://yargrinders.github.io/Final-work-wezom/",
-            technologies: "HTML CSS JS"
-        },
-        {
-            imageSrc: "img/cards_img/OKS.png",
-            link: "https://yargrinders.github.io/kiosk/",
-            technologies: "HTML CSS VueJS jQuery"
-        },
-        // Add more cards here.
-    ];
-
     const portfolio = document.querySelector('.portfolio');
     const openMoreButton = document.getElementById('openMoreButton');
     const closeCardsButton = document.getElementById('closeCards');
-    const cardsToShow = 4;
+    const cardsToShow = 8;
     let currentCardIndex = 0;
     let buttonClicked = false;
 
@@ -36,6 +17,8 @@ function PortfolioCards() {
                     </div>
                     <div class="card_image-bottom">
                         <p>${card.technologies}</p>
+                        <p><a href="${card.link}" target="_blank">Vorschau der Website</a></p>
+                        <p><a href="${card.link_git}" target="_blank">Quellcode auf GitHub</a></p>
                     </div>                        
                 </div>
             </div>
@@ -43,9 +26,9 @@ function PortfolioCards() {
         portfolio.insertAdjacentHTML('beforeend', cardHTML);
     }
 
-    function addCardsToDOM(start, end) {
-        for (let i = start; i < end && i < cardData.length; i++) {
-            addCardToDOM(cardData[i]);
+    function addCardsToDOM(data, start, end) {
+        for (let i = start; i < end && i < data.length; i++) {
+            addCardToDOM(data[i]);
         }
 
         setTimeout(() => {
@@ -63,39 +46,44 @@ function PortfolioCards() {
         }, 10);
     }
 
-    function init() {
-        addCardsToDOM(currentCardIndex, currentCardIndex + cardsToShow);
-        currentCardIndex += cardsToShow;
+    // cards.json
+    function loadCardData() {
+        fetch('files/cards.json')
+            .then(response => response.json())
+            .then(data => {
+                addCardsToDOM(data, currentCardIndex, currentCardIndex + cardsToShow);
+                currentCardIndex += cardsToShow;
 
-        openMoreButton.addEventListener('click', () => {
-            addCardsToDOM(currentCardIndex, currentCardIndex + cardsToShow);
-            currentCardIndex += cardsToShow;
-            buttonClicked = true;
+                openMoreButton.addEventListener('click', () => {
+                    addCardsToDOM(data, currentCardIndex, currentCardIndex + cardsToShow);
+                    currentCardIndex += cardsToShow;
+                    buttonClicked = true;
 
-            if (currentCardIndex >= cardData.length) {
-                openMoreButton.style.display = 'none';
-                closeCardsButton.style.display = 'block';
-            }
-        });
+                    if (currentCardIndex >= data.length) {
+                        openMoreButton.style.display = 'none';
+                        closeCardsButton.style.display = 'block';
+                    }
+                });
 
-        closeCardsButton.addEventListener('click', () => {
-            closeCardsButton.style.display = 'none';
-            openMoreButton.style.display = 'block';
+                closeCardsButton.addEventListener('click', () => {
+                    closeCardsButton.style.display = 'none';
+                    openMoreButton.style.display = 'block';
 
-            portfolio.innerHTML = '';
-            currentCardIndex = 0;
-            buttonClicked = false;
+                    portfolio.innerHTML = '';
+                    currentCardIndex = 0;
+                    buttonClicked = false;
 
-            addCardsToDOM(currentCardIndex, currentCardIndex + cardsToShow);
-            currentCardIndex += cardsToShow;
+                    addCardsToDOM(data, currentCardIndex, currentCardIndex + cardsToShow);
+                    currentCardIndex += cardsToShow;
 
-            const portfolioHeader = document.getElementById('p');
-            portfolioHeader.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
-        });
+                    const portfolioHeader = document.getElementById('p');
+                    portfolioHeader.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+                });
+            })
+            .catch(error => console.error('Error loading card data:', error));
     }
 
-    // Initialize module
-    init();
+    loadCardData();
 }
 
 export default PortfolioCards;

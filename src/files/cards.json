@@ -1,0 +1,20 @@
+[
+    {
+        "imageSrc": "img/cards_img/oA73KOL.png",
+        "link": "#",
+        "link_git": "https://github.com/jjportfolio/jjportfolio.github.io",
+        "technologies": "Gulp Html Scss JS"
+    },
+    {
+        "imageSrc": "img/cards_img/jjportfolio.github.io_halloween_.png",
+        "link": "https://jjportfolio.github.io/halloween/",
+        "link_git": "https://github.com/jjportfolio/halloween",
+        "technologies": "Html Scss Js"
+    },
+    {
+        "imageSrc": "img/cards_img/Novaboard.png",
+        "link": "https://jjportfolio.github.io/Final-work-wezom/",
+        "link_git": "https://github.com/jjportfolio/Final-work-wezom",
+        "technologies": "HTML CSS JS"
+    }
+]
